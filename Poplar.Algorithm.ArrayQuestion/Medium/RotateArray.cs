@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poplar.Algorithm.Array
+namespace Poplar.Algorithm.ArrayQuestion
 {
     internal class RotateArray
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poplar.Algorithm.Array
+namespace Poplar.Algorithm.ArrayQuestion
 {
     /// <summary>
     /// 移动零

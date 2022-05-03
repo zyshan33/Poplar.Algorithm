@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poplar.Algorithm.Array.Medium
+namespace Poplar.Algorithm.ArrayQuestion
 {
     internal class ThreeSum
     {
