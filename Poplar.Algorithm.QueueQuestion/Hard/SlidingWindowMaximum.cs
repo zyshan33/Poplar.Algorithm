@@ -22,7 +22,7 @@ namespace Poplar.Algorithm.QueueQuestion
         public int[] MaxSlidingWindowTwo(int[] nums, int k)
         {
             var container = new int[nums.Length - k + 1];
-            var deque = new Deque<int>(k);
+            var deque = new SlidingWindowDeque<int>(k);
             for (var i = 0; i < k - 1; i++)
             {
                 while (!deque.IsEmpty() && nums[deque.GetLast()] < nums[i])
@@ -63,7 +63,7 @@ namespace Poplar.Algorithm.QueueQuestion
             return container;
         }
 
-        public class Deque<T>
+        public class SlidingWindowDeque<T>
         {
             private readonly T[] _dataSet;
             public int MaxSize { get; }
@@ -71,7 +71,7 @@ namespace Poplar.Algorithm.QueueQuestion
             private int pRear;
             public int Length { get; private set; }
 
-            public Deque(int k = 0)
+            public SlidingWindowDeque(int k = 0)
             {
                 MaxSize = k;
                 _dataSet = new T[k];
