@@ -1,11 +1,13 @@
-﻿namespace Poplar.Algorithm.Infrastructure.Queues
+﻿using System.Runtime.CompilerServices;
+
+namespace Poplar.Algorithm.Infrastructure.Queues
 {
     /// <summary>
     /// 数组双端队列
     /// </summary>
-    public class ArrayDeque
+    public class ArrayDeque<T>
     {
-        private readonly int[] _container;
+        private readonly T[] _container;
         private readonly int _maxSize;
         private int _front;
         private int _rear;
@@ -13,7 +15,7 @@
 
         public ArrayDeque(int k)
         {
-            _container = new int[k];
+            _container = new T[k];
             _maxSize = k;
             _front = 0;
             _rear = 0;
@@ -28,7 +30,7 @@
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public bool InsertFront(int value)
+        public bool InsertFront(T value)
         {
             if (_length == _maxSize)
                 return false;
@@ -47,7 +49,7 @@
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public bool InsertLast(int value)
+        public bool InsertLast(T value)
         {
             if (_length == _maxSize)
                 return false;
@@ -89,10 +91,10 @@
         /// 约定写的时候当前头指针是有值不可写的，所以读的时候直接读就行。
         /// </summary>
         /// <returns></returns>
-        public int GetFront()
+        public T GetFront()
         {
             if (_length == 0)
-                return -1;
+                throw new InvalidOperationException("length is zero");
             return _container[_front];
         }
 
@@ -101,10 +103,10 @@
         /// 此时自减同样需要判断是否到达边界值
         /// </summary>
         /// <returns></returns>
-        public int GetRear()
+        public T GetRear()
         {
             if (_length == 0)
-                return -1;
+                throw new InvalidOperationException("length is zero");
             var index = _rear - 1;
             index = index > -1 ? index : _maxSize - 1;
             return _container[index];
@@ -118,6 +120,14 @@
         public bool IsFull()
         {
             return _length == _maxSize;
+        }
+
+        public int Count
+        {
+            get
+            {
+                return _length;
+            }
         }
     }
 }
