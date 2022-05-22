@@ -14,6 +14,50 @@ namespace Poplar.Algorithm.BinaryTreeQuestion
     internal class BinaryTreeInOrderTraversal
     {
         /// <summary>
+        /// 这个方法最重要的是标记，从根开始遍历，对于当前遍历到的任意节点，找到它中序遍历的前驱节点，也就是当前节点的左子树中的最右一个节点，找到最右节点之后，让最右节点的right指针指向当前遍历节点，此时就完成了当前节点的前驱的标记。然后再对当前节点的左孩子执行同样的标记，直到遍历到没有左孩子的节点。
+        ///
+        /// 对于当前遍历到的任意节点来说，假如它没有左孩子，把当前节点的值加入到结果集，把当前节点的右孩子作为下一个要遍历的对象。
+        /// 如果有左孩子，就执行内层循环，找到当前节点左孩子中的最右节点，也就是当前节点的前驱，此时前驱存在两种情况，
+        ///     一种是前驱的right节点为空，那么需要将前驱的right指针指向当前节点
+        ///     另外一种是前驱的right节点不为空，则证明这个节点已经标记过，并且前驱是已经被遍历过了，此时就需要将当前节点加入结果集中，并且让当前节点的右孩子变成当
+        ///     前节点，再把前驱的右孩子置空。
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public IList<int> InorderTraversalThree(TreeNode root)
+        {
+            var ans = new List<int>();
+            while (root != null)
+            {
+                if (root.left != null)
+                {
+                    var predecessor = root.left;
+                    while (predecessor.right != null && predecessor.right != root)
+                    {
+                        predecessor = predecessor.right;
+                    }
+                    if (predecessor.right != null)
+                    {
+                        ans.Add(root.val);
+                        root = root.right;
+                        predecessor.right = null;
+                    }
+                    else
+                    {
+                        predecessor.right = root;
+                        root = root.left;
+                    }
+                }
+                else
+                {
+                    ans.Add(root.val);
+                    root = root.right;
+                }
+            }
+            return ans;
+        }
+
+        /// <summary>
         /// 使用栈模拟递归调用
         /// 外层的大的while循环，目的是遍历了当前节点之后，再往当前节点的右子节点方向进行新一轮的中序遍历。
         /// 外层循环的结束条件是count > 0 和 root != null，这里主要是为了代码整洁。
