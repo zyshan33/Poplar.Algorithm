@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poplar.Algorithm.BinaryTreeQuestion
+namespace Poplar.Algorithm.BinaryTreeQuestion.Easy
 {
     /// <summary>
     /// 二叉树前序遍历
