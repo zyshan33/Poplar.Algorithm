@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poplar.Algorithm.QueueQuest
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poplar.Algorithm.Infrastructure", "Poplar.Algorithm.Infrastructure\Poplar.Algorithm.Infrastructure.csproj", "{6599D5E6-A0A5-4CE8-98E2-C4BCA87EE57D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poplar.Algorithm.HashTableQuestion", "Poplar.Algorithm.HashTableQuestion\Poplar.Algorithm.HashTableQuestion.csproj", "{A74775CA-F048-49CF-814B-680D640B8AA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Poplar.Algorithm.HashTableQuestion", "Poplar.Algorithm.HashTableQuestion\Poplar.Algorithm.HashTableQuestion.csproj", "{A74775CA-F048-49CF-814B-680D640B8AA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poplar.Algorithm.BinaryTreeQuestion", "Poplar.Algorithm.BinaryTreeQuestion\Poplar.Algorithm.BinaryTreeQuestion.csproj", "{82232504-2628-4930-8C17-251D13AFFF46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{A74775CA-F048-49CF-814B-680D640B8AA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A74775CA-F048-49CF-814B-680D640B8AA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A74775CA-F048-49CF-814B-680D640B8AA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82232504-2628-4930-8C17-251D13AFFF46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82232504-2628-4930-8C17-251D13AFFF46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82232504-2628-4930-8C17-251D13AFFF46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82232504-2628-4930-8C17-251D13AFFF46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
